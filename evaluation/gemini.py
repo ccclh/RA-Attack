@@ -233,7 +233,7 @@ if __name__ == '__main__':
                         help="要执行的攻击类型")
     
     parser.add_argument('--model_name', type=str, default='gemini-2.5-pro',
-                        choices=['gemini-2.0-flash-thinking-exp-01-21', 'gemini-2.5-pro','gemini-2.0-flash'],
+                        choices=['gemini-2.0-flash-thinking-exp-01-21', 'gemini-2.5-pro', 'gemini-2.0-flash'],
                         help='要使用的Google Gemini模型名称 (必须是支持视觉的模型)')
     
     parser.add_argument('--dataset', default="advbench",
