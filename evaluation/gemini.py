@@ -200,7 +200,7 @@ def main(args):
 
     with open(output_file, "w", encoding="utf-8") as fout:
         for item in tqdm(dataset, desc=f"在 {args.dataset} 上处理查询"):
-            if args.attack_type == 'CA':
+            if args.attack_type == 'RA':
                 query = build_ra_attack_prompt(item, include_mindmap=True)
             else: 
                 query = item.get("original_instruction", "")
@@ -229,7 +229,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="使用Google Gemini API对AdvBench数据集执行攻击")
     
-    parser.add_argument('--attack_type', type=str, default='RA', ,
+    parser.add_argument('--attack_type', type=str, default='RA', choices=['RA', 'ori'],
                         help="要执行的攻击类型")
     
     parser.add_argument('--model_name', type=str, default='gemini-2.5-pro',
